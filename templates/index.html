@@ -1,0 +1,446 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>Федерация танцевального спорта Забайкальского края</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="static/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="static/css/animate.css" rel="stylesheet">
+        <link href="static/vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="static/css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <!-- END HEAD -->
+
+    <!-- BODY -->
+    <body>
+
+        <!--========== HEADER ==========-->
+        <header class="header navbar-fixed-top">
+            <!-- Navbar -->
+            <nav class="navbar" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="index.html">
+                                <img class="logo-img logo-img-main" src="static/img/logo.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-active" src="static/img/logo-dark.png" alt="Asentus Logo">
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-collapse">
+                        <div class="menu-container">
+                            <ul class="navbar-nav navbar-nav-right">
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="{% url 'index' %}">О федерации</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'tour_item' pk=1 %}">Турниры</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'about' %}">Новости</a></li>
+                                <!--<li class="nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'products' %}">Клубы</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'faq' %}">FAQ</a></li>-->
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{% url 'contact' %}">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navbar Collapse -->
+                </div>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+        <!--========== SLIDER ==========-->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="container">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+            </div>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img class="img-responsive" src="static/img/1920x1080/01.jpg" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h1 class="carousel-title">Забайкальский край</h1>
+                                <p>Федерация танцевального спорта</p>
+                            </div>
+                            <a href="about.html" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="static/img/1920x1080/02.jpg" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h1 class="carousel-title">Забайкальский край</h1>
+                                <p>Федерация танцевального спорта</p>
+                            </div>
+                            <a href="about.html" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== SLIDER ==========-->
+
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- Service -->
+        <div class="bg-color-sky-light" data-auto-height="true">
+            <div class="content-lg container">
+                <div class="row row-space-1 margin-b-2">
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/01.png" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевально-спортивный клуб «Даурия»</h3>
+                                    <p class="margin-b-5">Место проведения занятий:
+                                    мкр. Северный, 52 (школа № 27)
+                                    ул. Фёдора Гладкова, 8А (Детская школа искусств № 3)<br/>
+                                    <br/><br/>
+
+                                    Руководитель: Олеся Лесникова.
+                                    Тренер: Олеся Лесникова.</p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/02.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Студия спортивного танца «Реверанс» </h3>
+                                    <p class="margin-b-5">Место проведения занятий: 
+                                    ул. Ленина, д. 88 (Дом офицеров), каб. 313
+                                    <br/><br/>
+
+                                    Руководитель: Марина Ожегова.
+                                    Тренеры: Марина Ожегова, Юлия Ожегова, Дмитрий Степанов.
+                                    <br/><br/>
+                                    Тел.: +7 914 450-72-18, +7 914 490-54-61.
+                                    Реверанс в контакте, публикации на сайте
+                                    </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <br/>
+                                    <img src="static/img/club/03.jpg" height="50" align="center">
+                                    <br/><br/>
+
+                                </div>
+                                <div class="service-info">
+                                    <h3>Студия спортивного танца «Реверанс»</h3>
+                                    <p class="margin-b-5">
+                                    Место проведения занятий: 
+                                    ул. Бутина, д. 51 (Филармония)
+                                    <br/><br/>
+                                    Руководитель: Андрей Ожегов.
+                                    <br/><br/>
+                                    Тел.: +7 914 450-72-17.
+                                    Страница в контакте, публикации на сайте</p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// end row -->
+
+                <div class="row row-space-1">
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/04.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевальный клуб «Сигма-Данс»</h3>
+                                    <h6>Забайкальская региональная детская общественная организация</h6>
+                                    <p class="margin-b-5">
+                                    Места проведения занятий:
+                                    ул. Июньская, д. 2 (школа № 9), п. КСК, пр. Фадеева, д. 1 (ТНК «Забайкальские узоры»)
+                                    <br/><br/>
+                                    Руководители: Алексей Вадимович Гуляев, Оксана, Оксана Владимировна Логинова.
+                                    <br/><br/>
+                                    Тел.: +7 924 276-29-36, +7 924 277-29-36
+                                    Сигма-Данс в контакте, публикации на сайте </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/05.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевально-спортивный клуб «Хип-твист»</h3>
+                                    <p class="margin-b-5">Место проведения занятий: 
+                                    ул. Журавлёва, д. 77 (Дворец детско-юношеского творчества)
+                                    ул. Красной Звезды, д. 74 (Спортивный зал «Огнеборец»)
+                                    <br/><br/>
+                                    Руководитель: Сергей Ганеев.
+                                    Тренеры: Сергей Ганеев, Анжелика Ганеева, Дмитрий Бянкин, Анастасия Жеребцова, Светлана Золотухина, Дмитрий и Алёна Гарчуковы, Ирина Вылегжаниана, Александр Галиулин, Олег Павлов.
+                                    <br/><br/>
+                                    Тел.: +7 914 461-29-95
+                                    Хип-твист в контакте, публикации на сайте </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".6s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/06.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевально-спортивный клуб «Академия танца»</h3>
+                                    <p class="margin-b-5">Место проведения занятий:
+                                    ул. Карла Маркса, д. 1, каб. 65 (Дом культуры железнодорожников)
+                                    <br/><br/>
+                                    Руководители: Мария и Екатерина Комогорцева.
+                                    Тел.: +7 964 462-10-00, +7 924 803-03-03.
+
+                                    Публикации на сайте
+                                    </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// end row -->
+                <div class="row row-space-1">
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/07.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевально-спортивный клуб «Genève»</h3>
+                                    <p class="margin-b-5">
+                                    Место проведения занятий:
+                                    ул. Генерала Белика, д. 41 (КСК «Мегаполис Спорт»)
+                                    мкр. Северный, д. 1 (Школа № 22)
+                                    <br/><br/>
+                                    Руководитель: Валентин Коробков.
+                                    Тренеры: Валентин Коробков, Евгения Захарова.
+                                    Сайт, Genève в контакте, публикации на сайте</p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/08.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Танцевально-спортивный клуб «Rio de Latino»</h3>
+                                    <p class="margin-b-5">Место проведения занятий:
+                                    ул. Смоленская, 104 (вечернее время)
+                                    <br/><br/>
+                                    Руководитель: Юлия Павлова.
+                                    Тренер: Юлия Павлова.
+                                    Тел.: +7 914 124-92-01.
+                                    Rio de Latino в контакте, публикации на сайте</p>
+
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".6s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/09.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Студия восточного танца «Гюлистан»</h3>
+                                    <p class="margin-b-5">Место проведения занятий: 
+                                    ул. Бутина, 51 (Забайкальская краевая филармония), каб. 401
+                                     <br/><br/>
+                                    Руководитель: Назарова Жанна Валерьевна
+                                    Тел.: +7 924 471 26 35, +7 964 472 37 05, 20-65-78
+                                    Гюлистан в контакте, публикации на сайте </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// end row -->
+                <!--// end row -->
+                <div class="row row-space-1">
+                    <div class="col-sm-4 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
+                            <div class="service" data-height="height">
+                                <div class="service-element">
+                                    <img src="static/img/club/10.jpg" height="100" align="center">
+                                </div>
+                                <div class="service-info">
+                                    <h3>Школа танца «SOUS»</h3>
+                                    <p class="margin-b-5">
+                                    Место проведения занятий: 
+                                    ул. Бабушкина, д. 129, корпус ЗабГУ, 6 этаж.
+                                    <br/><br/>
+                                    Руководители: Наталья Уланова и Григорий Пуртов
+                                     Тел.: +7 924 270-13-92, +7 924 388-46-50.
+                                    SOUS в контакте, публикации на сайте </p>
+                                </div>
+                                <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End Service -->
+
+        <!-- End Work -->
+        <!--========== END PAGE LAYOUT ==========-->
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer">
+            <!-- Links -->
+            <div class="footer-seperator">
+                <div class="content-lg container">
+                    <div class="row">
+                        <div class="col-sm-2 sm-margin-b-50">
+                            <!-- List -->
+                            <ul class="list-unstyled footer-list">
+                                <li class="footer-list-item"><a class="footer-list-link" href="{% url 'index' %}">О федерации</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{% url 'tourney' %}">Турниры</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Новости</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Pricing</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Clients</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Careers</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Contact</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Terms</a></li>
+
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="index">О федерации</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="tourney">Турниры</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about">О нас</a></li>
+                                <!--<li class="nav-item"><a class="nav-item-child nav-item-hover" href="products">Клубы</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq">FAQ</a></li>-->
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="contact">Контакты</a></li>
+                            </ul>
+                            <!-- End List -->
+                        </div>
+                        <div class="col-sm-4 sm-margin-b-30">
+                            <!-- List -->
+                            <ul class="list-unstyled footer-list">
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Twitter</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Facebook</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">Instagram</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="http://keenthemes.com/">YouTube</a></li>
+                            </ul>
+                            <!-- End List -->
+                        </div>
+                        <div class="col-sm-5 sm-margin-b-30">
+                            <h2 class="color-white">Отправить сообщение</h2>
+                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Имя" required>
+                            <input type="email" class="form-control footer-input margin-b-20" placeholder="Email" required>
+                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Телефон" required>
+                            <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Сообщение" required></textarea>
+                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Отправить</button>
+                        </div>
+                    </div>
+                    <!--// end row -->
+                </div>
+            </div>
+            <!-- End Links -->
+
+            <!-- Copyright -->
+            <div class="content container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img class="footer-logo" src="static/img/logo.png" alt="Asentus Logo">
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <p class="margin-b-0"><a class="color-base fweight-700" href="http://keenthemes.com/preview/asentus/">© 2014–2018</a> РМОО «Федерация танцевального спорта Забайкальского края»</p>
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+            <!-- End Copyright -->
+        </footer>
+        <!--========== END FOOTER ==========-->
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
+        <script src="static/vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="static/vendor/jquery-migrate.min.js" type="text/javascript"></script>
+        <script src="static/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
+        <script src="static/vendor/jquery.easing.js" type="text/javascript"></script>
+        <script src="static/vendor/jquery.back-to-top.js" type="text/javascript"></script>
+        <script src="static/vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <script src="static/vendor/jquery.wow.min.js" type="text/javascript"></script>
+        <script src="static/vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+        <script src="static/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="static/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
+        <script src="static/js/layout.min.js" type="text/javascript"></script>
+        <script src="static/js/components/wow.min.js" type="text/javascript"></script>
+        <script src="static/js/components/swiper.min.js" type="text/javascript"></script>
+        <script src="static/js/components/masonry.min.js" type="text/javascript"></script>
+
+    </body>
+    <!-- END BODY -->
+</html>

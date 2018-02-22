@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div>
+        <h1>Клубы</h1>
+    </div>
+	<ul>
+		{% for dancer in dancers %}
+			<li>
+				<a href="{{ dancer.get_absolute_url }}">
+					{{ dancer.fio }} ({{ dancer.transl }})
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

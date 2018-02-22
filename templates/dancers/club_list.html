@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<ul>
+		{% for club in clubs %}
+			<li>
+				<a href="{{ club.get_absolute_url }}">
+					{{ club.name }} ({{ club.get_dancers_count }})
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

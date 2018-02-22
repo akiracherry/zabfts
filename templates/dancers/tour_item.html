@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content container">
+	    <div class="row">
+	        <div class="col-md-8">
+		    <div class="post">
+		    <table class="table table-bordered table-hover" border="1">
+		        <thead>
+		            <tr>
+		                <th>Группа</th>
+		                <th>№ Кн.</th>
+		                <th>Фамилия Имя</th>
+		                <th>№ Кн.</th>
+		                <th>Фамилия Имя</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		        {% with tour.get_all_groups as groups %}
+		        	{% for group in groups %}
+			            {% with group.get_all_atls as atls %}
+			                {% for atl in atls %} 
+			                	{% with tour.get_all_dancers as dancers %}
+			                		{% for dancer in dancers %}
+			                			{% if atl.dancer1 == dancer.numbs %}
+						                    <tr>
+						                    <td>{{ group.name }}</td>
+						                        <td>{{ atl.dancer1 }}</td>
+						                        <td>{{ dancer.fio }}</td>
+						                        {% for dancer in dancers %}
+			                						{% if atl.dancer2 == dancer.numbs %}
+													<td>{{ atl.dancer2 }}</td>
+							                        <td>{{ dancer.fio }}</td>
+						                        	{% endif %}
+					                			{% endfor %}
+						                    </tr>
+					                    {% endif %}
+					                {% endfor %}
+			            		{% endwith %}
+			                {% endfor %}
+			            {% endwith %}
+			        {% endfor %}
+			    {% endwith %}
+
+			    {% with tour.get_all_tours as tours %}
+                    {% for tour in tours %}
+                    <div class="col-sm-6.5 sm-margin-b-1">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                            <!-- Pricing -->
+                            <div>
+                                <div class="margin-b-30">
+                                    <h3>{{ tour.title }}</h3>
+                                    <p>{{ tour.vidtor }}</p>
+                                </div>
+                                <ul class="list-unstyled pricing-list margin-b-50">
+                                    <li class="pricing-list-item">Регистрация открыта до: {{ tour.reg }}</li>
+                                    <li><font color="red">{{ tour.vid }}</font></li>
+                                </ul>
+                                <a href="{% url 'atl_add' %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Зарегистрироваться</a>
+                                <a href="{% url 'tour_item' pk=tour.pk %}" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Регистрационные списки</a>
+                            </div>
+                            <div><p>   </p></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endwith %}
+
+    <h2>{{ tour.title }}</h2>
+
+    <h3>Регистрационные списки</h3>
+		        </tbody>
+		    </table>
+		    </div>
+		</div>
+	</div>
+{% endblock %}

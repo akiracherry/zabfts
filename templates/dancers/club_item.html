@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ club.name }}</h1>
+
+    <h2>Танцоры</h2>
+    <div class="content container">
+	    <div class="row">
+	        <div class="col-md-8">
+		    <div class="post">
+		    <table class="table table-bordered table-hover" border="1">
+		        <thead>
+		            <tr>
+		                <th>№</th>
+		                <th>№ Кн.</th>
+		                <th>Фамилия Имя</th>
+		                <th>Отчество</th>
+		                <th>Дата рождения</th>
+		                <th>ST</th>
+		                <th>Д.ST</th>
+		                <th>LA</th>
+		                <th>Д.LA</th>
+		                <th>Разряд</th>
+		                <th>Д.Разряд</th>
+		                <th>Транслит</th>
+		                <th>Клуб</th>
+		                <th>Город</th>
+		                <th>Ст.тренер</th>
+		                <th>Тренер</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            {% with club.get_all_dancers as dancers %}
+		                {% for dancer in dancers %}
+		                    <tr>
+		                        <td>{{ forloop.counter }}</td>
+		                        <td>{{ dancer.numbs }}</td>
+		                        <td>{{ dancer.fio }}</td>
+		                        <td>{{ dancer.otch }}</td>
+		                        <td>{{ dancer.date_birth }}</td>
+		                        <td>{{ dancer.st }}</td>
+		                        <td>{{ dancer.d.st }}</td>
+		                        <td>{{ dancer.la }}</td>
+		                        <td>{{ dancer.d.la }}</td>
+		                        <td>{{ dancer.rank }}</td>
+		                        <td>{{ dancer.drank }}</td>
+		                        <td>{{ dancer.transl }}</td>
+		                        <td>{{ dancer.club }}</td>
+		                        <td>{{ dancer.city }}</td>
+		                        <td>{{ dancer.strainer }}</td>
+		                        <td>
+		                        {% for trainer in dancer.get_all_trainers %}
+				                	{{ dancer.trainer }}
+				                {% endfor %}
+				                </td>
+		                    </tr>
+		                {% endfor %}
+		            {% endwith %}
+		        </tbody>
+		    </table>
+		    </div>
+		</div>
+	</div>
+{% endblock %}
